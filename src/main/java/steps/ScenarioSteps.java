@@ -38,14 +38,17 @@ public class ScenarioSteps {
         public void stepSelectMoreFilters(){
                 televisionListSteps.stepSelectAllFilters();
         }
-        @Then("выбирается минимальная сумма")
-        public void stepSelectMinSum(){
-                filterSteps.stepSelectMinSum("20000");
+        @Then("^выбирается минимальная сумма \"(.*)\"$")
+        public void stepSelectMinSum(String minSum){
+                filterSteps.stepSelectMinSum(minSum);
         }
-        @Then("выбираются производители")
-        public void stepSelectCompany(){
-                filterSteps.stepSelectCheckBox("LG");
-                filterSteps.stepSelectCheckBox("Samsung");
+        @Then("^выбираются производители:")
+        public void stepSelectCompany(List<String> list){
+                for (String company: list  ) {
+                        filterSteps.stepSelectCheckBox(company);
+                }
+
+                //filterSteps.stepSelectCheckBox("Samsung");
         }
         @When("нажимается кнопка 'Применить'")
         public void stepSubmit(){
