@@ -1,13 +1,11 @@
 package steps;
 
-import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebElement;
 import pages.TelevisionsListPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
-import static junit.framework.TestCase.assertEquals;
 
 public class TelevisionListSteps {
     TelevisionsListPage televisionsListPage = new TelevisionsListPage();

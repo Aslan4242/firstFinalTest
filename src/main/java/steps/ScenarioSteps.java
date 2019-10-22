@@ -4,7 +4,6 @@ package steps;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebElement;
-import pages.TelevisionPage;
 
 import java.util.List;
 
@@ -48,7 +47,6 @@ public class ScenarioSteps {
                         filterSteps.stepSelectCheckBox(company);
                 }
 
-                //filterSteps.stepSelectCheckBox("Samsung");
         }
         @When("нажимается кнопка 'Применить'")
         public void stepSubmit(){
