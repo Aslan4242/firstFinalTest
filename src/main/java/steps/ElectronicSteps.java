@@ -5,8 +5,8 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class ElectronicSteps {
 
-    @Step("выбран пункт меню 'Телевизоры'")
-    void stepSelectMenu() {
-        new ElectronicPage().selectMenuItem();
+    @Step("^выбран пункт меню \"(.*)\"$")
+    void stepSelectMenu(String itemName) {
+        new ElectronicPage().selectMenuItem(itemName);
     }
 }

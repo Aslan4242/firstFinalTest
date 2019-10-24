@@ -23,14 +23,14 @@ public class ScenarioSteps {
                 mainSteps.stepSelectMenu(menuItem);
         }
 
-        @When("выбрана категория 'Электроника'")
-        public void stepSelectCategory(){
-                marketMainSteps.stepSelectMenu();
+        @When("^выбрана категория \"(.*)\"$")
+        public void stepSelectCategory(String itemName){
+                marketMainSteps.stepSelectMenu(itemName);
         }
 
-        @When("выбрана подкатегория - 'Телевизоры'")
-        public void stepSelectSubCategory(){
-                electronicSteps.stepSelectMenu();
+        @When("^выбрана подкатегория - \"(.*)\"$")
+        public void stepSelectSubCategory(String itemName){
+                electronicSteps.stepSelectMenu(itemName);
         }
 
         @Then("выбирается пункт 'Все фильтры'")

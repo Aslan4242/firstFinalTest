@@ -38,6 +38,4 @@ public class FiltersPage extends BasePage {
             default:  throw new AssertionError("Поле '"+checkBoxName+"' не объявлено на странице");
         }
     }
-
-
 }
