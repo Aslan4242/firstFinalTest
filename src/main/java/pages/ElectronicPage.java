@@ -18,5 +18,4 @@ public class ElectronicPage {
     public void selectMenuItem(String itemName) {
         electronicElements.findElement(By.xpath(".//a[contains(text(),'"+itemName+"')]")).click();
     }
-
 }

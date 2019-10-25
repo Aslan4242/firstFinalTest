@@ -1,5 +1,6 @@
 package steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.TelevisionsListPage;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -10,9 +11,9 @@ import java.util.List;
 public class TelevisionListSteps {
     TelevisionsListPage televisionsListPage = new TelevisionsListPage();
 
-    @Step("нажата кнопка 'Все фильтры'")
-    void stepSelectAllFilters() {
-        televisionsListPage.filters.click();
+    @Step("нажата кнопка \"(.*)\"$")
+    void stepSelectAllFilters(String itemName) {
+        BaseSteps.getDriver().findElement(By.xpath("//span[text()='"+itemName+"']/..")).click();
     }
 
     @Step("выбрано значение 'Показывать по 12'")
@@ -45,6 +46,4 @@ public class TelevisionListSteps {
         String firstElement = list.get(0).getText().toLowerCase().substring(10);
         televisionsListPage.selectDropDownElement(firstElement);
     }
-
-
 }

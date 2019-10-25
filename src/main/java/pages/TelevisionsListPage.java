@@ -21,7 +21,7 @@ public class TelevisionsListPage {
     @FindBy(xpath = "//input[contains(@id,'header-search')]")
     public WebElement searchField;
 
-    @FindBy(xpath = "//a[contains(@href,'filters')]")
+    @FindBy(xpath = "//span[text()='Все фильтры']/..")
     public WebElement filters;
 
     @FindBy(xpath = "//div[contains(@id,'product')]//a[@title] [contains(@class,'theme')]")
@@ -50,5 +50,4 @@ public class TelevisionsListPage {
         Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);
         wait.until(ExpectedConditions.elementToBeClickable(listProducts));
     }
-
 }

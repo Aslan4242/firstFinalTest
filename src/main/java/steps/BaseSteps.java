@@ -50,9 +50,7 @@ public class BaseSteps {
     }
 
     @After
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
-
-
 }

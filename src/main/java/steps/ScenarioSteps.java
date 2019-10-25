@@ -33,9 +33,9 @@ public class ScenarioSteps {
                 electronicSteps.stepSelectMenu(itemName);
         }
 
-        @Then("выбирается пункт 'Все фильтры'")
-        public void stepSelectMoreFilters(){
-                televisionListSteps.stepSelectAllFilters();
+        @Then("выбирается пункт \"(.*)\"$")
+        public void stepSelectMoreFilters(String itemName){
+                televisionListSteps.stepSelectAllFilters(itemName);
         }
         @Then("^выбирается минимальная сумма \"(.*)\"$")
         public void stepSelectMinSum(String minSum){
