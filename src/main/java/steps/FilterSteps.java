@@ -4,20 +4,20 @@ import pages.FiltersPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class FilterSteps {
+    FiltersPage filtersPage = new FiltersPage();
 
     @Step("выбрана мнимальная сумма '20000'")
     void stepSelectMinSum(String value) {
-        new FiltersPage().fillMinSumField(value);
+        filtersPage.fillMinSumField(value);
     }
 
-    @Step("выбраны производители 'LG' и 'Sasmung'")
+    @Step("выбраны производители")
     void stepSelectCheckBox(String checkBoxName) {
-        new FiltersPage().selectCheckBox(checkBoxName);
+        filtersPage.selectCheckBox(checkBoxName);
     }
 
     @Step("нажата кнопка 'Показать пдходящие'")
     void stepSelectConfurmButton() {
-        new FiltersPage().showButton.click();
+        filtersPage.showButton.click();
     }
-
 }

@@ -1,6 +1,5 @@
 package steps;
 
-import org.openqa.selenium.support.FindBy;
 import pages.MainPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
@@ -10,5 +9,4 @@ public class MainSteps {
     public void stepSelectMenu(String menuItem) {
         new MainPage().selectMenuItem(menuItem);
     }
-
 }

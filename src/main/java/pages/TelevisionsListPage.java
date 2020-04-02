@@ -21,7 +21,7 @@ public class TelevisionsListPage {
     @FindBy(xpath = "//input[contains(@id,'header-search')]")
     public WebElement searchField;
 
-    @FindBy(xpath = "//a[contains(@href,'filters')]")
+    @FindBy(xpath = "//span[text()='Все фильтры']/..")
     public WebElement filters;
 
     @FindBy(xpath = "//div[contains(@id,'product')]//a[@title] [contains(@class,'theme')]")
@@ -39,7 +39,6 @@ public class TelevisionsListPage {
     public void selectDropDownElement(String itemName) {
         BaseSteps.getDriver()
                 .findElement(By.xpath("//b[contains(text(),'"+itemName+"')]")).click();
-        //li[contains(@class,'suggest2-rich-item i-bem suggest2-rich-item_interact_link suggest2-rich-item_type_mo')]//b[text()='" + itemName +"']/../.. /.. /span
     }
 
     public List<WebElement> getElements(){
@@ -47,13 +46,8 @@ public class TelevisionsListPage {
         return list;
     }
 
-    public void waitButtonClickable(){
-        Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);
-        wait.until(ExpectedConditions.visibilityOf(show48ListBox));
-    }
     public void waitLinksClickable(){
         Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);
         wait.until(ExpectedConditions.elementToBeClickable(listProducts));
     }
-
 }

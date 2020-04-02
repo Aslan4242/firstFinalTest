@@ -28,7 +28,7 @@ public class BaseSteps {
 
 
     @Before
-    public static void setUp() throws Exception {
+    public static void setUp() {
         switch (properties.getProperty("browser")){
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", properties.getProperty("webdriver.gecko.driver"));
@@ -50,31 +50,7 @@ public class BaseSteps {
     }
 
     @After
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
-
-    protected boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    protected void fillField(By locator, String value) {
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(value);
-    }
-
-    protected void checkFillField(String value, By locator) {
-        assertEquals(value, driver.findElement(locator).getAttribute("value"));
-    }
-
-    protected static void ChangePage(){
-        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
-    }
-
 }
