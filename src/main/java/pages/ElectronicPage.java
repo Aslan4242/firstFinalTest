@@ -12,10 +12,10 @@ public class ElectronicPage {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 
-    @FindBy(xpath = "//div[contains(@class,'section N9o4g')]")
-    WebElement electronicElements;
+    @FindBy(xpath = "//a[contains(@href,'televizory')]")
+    WebElement television;
 
-    public void selectMenuItem(String itemName) {
-        electronicElements.findElement(By.xpath(".//a[contains(text(),'"+itemName+"')]")).click();
+    public void selectMenuItem() {
+        television.click();
     }
 }

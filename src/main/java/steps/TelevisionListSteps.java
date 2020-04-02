@@ -11,9 +11,9 @@ import java.util.List;
 public class TelevisionListSteps {
     TelevisionsListPage televisionsListPage = new TelevisionsListPage();
 
-    @Step("нажата кнопка \"(.*)\"$")
-    void stepSelectAllFilters(String itemName) {
-        BaseSteps.getDriver().findElement(By.xpath("//span[text()='"+itemName+"']/..")).click();
+    @Step("нажата кнопка 'Все фильтры'")
+    void stepSelectAllFilters() {
+        televisionsListPage.filters.click();
     }
 
     @Step("выбрано значение 'Показывать по 12'")

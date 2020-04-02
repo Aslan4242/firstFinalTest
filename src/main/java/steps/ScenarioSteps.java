@@ -28,6 +28,7 @@ public class ScenarioSteps {
                 ArrayList tabs2 = new ArrayList (BaseSteps.getDriver().getWindowHandles());
                 BaseSteps.getDriver().switchTo().window(tabs2.get(1).toString());
         }
+
         @When("выбрана категория 'Электроника'")
         public void stepSelectCategory(){
                 marketMainSteps.stepSelectMenu();
@@ -42,6 +43,7 @@ public class ScenarioSteps {
         public void stepSelectMoreFilters(){
                 televisionListSteps.stepSelectAllFilters();
         }
+
         @Then("^выбирается минимальная сумма \"(.*)\"$")
         public void stepSelectMinSum(String minSum){
                 filterSteps.stepSelectMinSum(minSum);

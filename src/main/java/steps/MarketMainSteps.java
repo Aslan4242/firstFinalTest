@@ -7,7 +7,7 @@ public class MarketMainSteps {
 
 
     @Step("выбран пункт меню \"(.*)\"$")
-     void stepSelectMenu(String itemName) {
-        new MarketMainPage().selectMenuItem(itemName);
+     void stepSelectMenu() {
+        new MarketMainPage().selectMenuItem();
     }
 }

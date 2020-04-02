@@ -19,5 +19,4 @@ public class MarketMainPage {
     public void selectMenuItem() {
         electronic.click();
     }
-
 }
