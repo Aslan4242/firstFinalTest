@@ -3,14 +3,17 @@ package steps;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.TelevisionPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class ScenarioSteps {
+
         MainSteps mainSteps = new MainSteps();
         MarketMainSteps marketMainSteps = new MarketMainSteps();
         ElectronicSteps electronicSteps = new ElectronicSteps();
@@ -22,8 +25,9 @@ public class ScenarioSteps {
         @When("^выбран пункт меню \"(.*)\"$")
         public void stepSelectMainMenu(String menuItem){
                 mainSteps.stepSelectMenu(menuItem);
+                ArrayList tabs2 = new ArrayList (BaseSteps.getDriver().getWindowHandles());
+                BaseSteps.getDriver().switchTo().window(tabs2.get(1).toString());
         }
-
         @When("выбрана категория 'Электроника'")
         public void stepSelectCategory(){
                 marketMainSteps.stepSelectMenu();

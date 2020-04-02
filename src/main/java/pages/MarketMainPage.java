@@ -1,13 +1,14 @@
 package pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import steps.BaseSteps;
 
-public class MarketMainPage {
+import java.util.ArrayList;
 
+public class MarketMainPage {
     public MarketMainPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }

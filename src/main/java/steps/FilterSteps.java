@@ -1,7 +1,6 @@
 package steps;
 
 import pages.FiltersPage;
-import pages.TelevisionsListPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class FilterSteps {
